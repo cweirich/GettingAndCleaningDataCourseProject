@@ -32,7 +32,7 @@ Given the parameter, it navigates the data directories, reads the data files and
 
 And join those three datasets to create a single table that is returned.
 
-Note that these table have:
+Note that these tables have:
 * Only the measurements on the mean and standard deviation (req. 2)
 * Descriptive activity names (req. 3)
 * Descriptive variable names (req. 4).
