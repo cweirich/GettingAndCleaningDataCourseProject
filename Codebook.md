@@ -14,8 +14,8 @@ For the purpose of this project, the necessary files are:
 
 * In the data/train and data/test folders
   * **subject_train.txt** and **subject_test.txt**: contain the subject, numbered from 1 to 30.
-  * **X_train.txt** and **X_test.txt**: contain all 561 variables described in features.txt
-  * **y_train.txt** and **y_test.txt**: contain all activities performed by the subjects, as described in activity_labels.txt
+  * **X_train.txt** and **X_test.txt**: contain all 561 variables described in *features.txt*.
+  * **y_train.txt** and **y_test.txt**: contain all activities performed by the subjects, as described in *activity_labels.txt*.
 
 ### The dependencies
 
@@ -24,14 +24,15 @@ Packages *dplyr* and *reshape2* must be installed before running the script
 ### The variables and transformations
 
 The script uses the *mountTable* function to do most of the job, fulfilling the requirements 2-4 of the assignment.
-The function received one parameter that defines if it should do the work for the "test" or "train" datasets.
-Given the parameter, it navigates the data directories, read the data files and create datasets for:
+The function receives one parameter that defines if it should do the work for the "test" or "train" datasets.
+Given the parameter, it navigates the data directories, reads the data files and create datasets for:
 * Subjects
 * Activities
 * Measurements
+
 And join those three datasets to create a single table that is returned.
 
-Note that these table has:
+Note that these table have:
 * Only the measurements on the mean and standard deviation (req. 2)
 * Descriptive activity names (req. 3)
 * Descriptive variable names (req. 4).
@@ -39,6 +40,6 @@ Note that these table has:
 So we have the following environment variables:
 1. **testTable**: returned by *mountTable* with "test" parameter.
 2. **trainTable**: returned by *mountTable* with "train" parameter.
-3. **wholeDataset**: is the merge of the test and train datasets (req. 1)
-4. **moltenDataset**: is the long format of the dataset, using the columns subject and activity as constants.
-5. **tidyDataset**: is the reshaped molten data using the mean of the activities, grouped by subject and activity (req. 5)
+3. **wholeDataset**: the merge of the test and train datasets (req. 1)
+4. **moltenDataset**: the long format of the dataset, using the columns subject and activity as constants.
+5. **tidyDataset**: the reshaped molten data using the mean of the activities, grouped by subject and activity (req. 5)

@@ -11,6 +11,13 @@ This repo contains:
 The data folder is exactly as is when unzipped, with the exception of the 'Inertial Signals' folders, which are not necessary and were removed to save space. Note that the script uses this structure to read the files, so it must not be changed.
 
 To run the script, just open this project in RStudio and source the run_analysis.R file.
-It will create some variables in RStudio's environment and write a 'tidydataset.txt' file in the working directory.
+It will create some variables in RStudio's environment and write a *tidydataset.txt* file in the working directory.
 
-For more details please read the codebook.
+To read *tidydataset.txt* back into memory and view its contents, just run:
+
+```
+    data <- read.table("tidydataset.txt", header = TRUE)
+    View(data)
+```
+
+For more details please read the [codebook](Codebook.md).
